@@ -27,7 +27,7 @@ class BookscraperPipeline:
             adapter[lowercase_key] = value.lower()
 
         ## Price --> convert to float
-        price_keys = ['price', 'price_excl-tax', 'price_incl_tax', 'tax']
+        price_keys = ['price', 'price_excl_tax', 'price_incl_tax', 'tax']
         for price_key in price_keys:
             value = adapter.get(price_key)
             value = value.replace('£', '')
@@ -43,7 +43,7 @@ class BookscraperPipeline:
             adapter['availability'] = int(availability_array[0])
 
         ## Reviews --> convert string to number
-        num_reviews_string = adepter.get('num_reviews')
+        num_reviews_string = adapter.get('num_reviews')
         adapter['num_reviews'] = int(num_reviews_string)
 
         ## Stars --> convert text to number
