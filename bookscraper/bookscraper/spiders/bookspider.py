@@ -18,6 +18,7 @@ class BookspiderSpider(scrapy.Spider):
                 book_url = 'https://books.toscrape.com/catalogue/' + relative_url
             yield response.follow(book_url, callback = self.parse_book_page)
 
+        next_page = response.css('li.next a ::attr(href)').get()
         if next_page is not None:
             if 'catalogue/' in next_page:
                 next_page_url = 'https://books.toscrape.com/' + next_page
