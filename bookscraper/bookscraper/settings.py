@@ -21,6 +21,12 @@ SCRAPEOPS_FAKE_USER_AGENT_ENDPOINT = 'https://headers.scrapeops.io/v1/user-agent
 SCRAPEOPS_FAKE_USER_AGENT_ENABLED = True
 SCRAPEOPS_NUM_RESULTS = 5
 
+ROTATING_PROXY_LIST = [
+    '70.126.33.226:47370',
+    '203.30.190.93:80',
+    '104.22.37.236:80',
+]
+
 # Crawl responsibly by identifying yourself (and your website) on the user-agent
 #USER_AGENT = "bookscraper (+http://www.yourdomain.com)"
 
