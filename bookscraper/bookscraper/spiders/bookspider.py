@@ -22,6 +22,9 @@ class BookspiderSpider(scrapy.Spider):
         }
     }
 
+    def start_requests(self):
+        yield scrapy.Request(url=get_proxy_url(self.start_urls[0], callback=self.parse))
+
     def parse(self, response):
         books = response.css('article.product_pod')
 
